@@ -1,5 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route } from "react-router-dom";
+import AllPosts from "./components/AllPosts";
+import OnePost from "./components/OnePost";
+
+/*import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -20,6 +24,17 @@ function App() {
         </a>
       </header>
     </div>
+  );
+}*/
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div>
+        <Route component={AllPosts} path="/" exact />      
+        <Route component={OnePost} path="/:slug" exact />
+      </div>
+    </BrowserRouter>
   );
 }
 
